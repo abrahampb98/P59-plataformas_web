@@ -1,7 +1,27 @@
-h1{
-    font-size: 20px;
- }
+* {
+    margin: 0px;
+}
 
- h2{
-     font-size: 15px;
- }
+.container {
+    display: grid;
+    grid-template: 150px 1fr 50px / 1fr;
+    grid-template-areas: "header" "content" "footer";
+    grid-gap: 5px;
+    height: 100vh;
+}
+
+.item {
+    border: 1px solid black;
+}
+
+.header {
+    grid-area: header;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
