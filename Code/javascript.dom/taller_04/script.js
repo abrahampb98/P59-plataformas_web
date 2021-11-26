@@ -1,8 +1,6 @@
 function agregarElemento() {
-    var h1 = document.createElement('h1')
-    var contenido = document.createTextNode('DOM - Document Obbject Model')
-    h1.appendChild( contenido )
+    var texto = document.getElementById( 'texto' )
 
     var container = document.getElementById('container')
-    container.appendChild( h1 )
+    container.innerHTML = "<h1>" + texto.value + "</h1>"
 }
