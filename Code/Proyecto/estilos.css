@@ -31,6 +31,9 @@ a:hover{
 }
 
 .content {
+    background-image: url(01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     grid-area: content;
     justify-content: right;
 }
@@ -105,4 +108,20 @@ a:hover{
   margin: 16px 0;
   font-size: 16px;
 }
+
+
+.boton{
+    width: 10%;
+    background: #1fb2c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    position: relative;
+    top: 45%;
+    left: 45%;
+}
+
+
 
