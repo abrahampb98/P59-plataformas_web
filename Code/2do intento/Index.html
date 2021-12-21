@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script type="text/Javascript" src="Index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="topItem"></div>
+
+  <div class="container">
+    <div class="item header"></div>
+      <div class="item">
+        <div id="galery1" class="subItem"><span>Galería 1</span></div>
+        <div id="galery2" class="subItem"><span>Galería 2</span></div>
+        <div id="galery3" class="subItem"><span>Galería 3</span></div>
+      </div>
+
+      <div class="item">
+        <p id="backward" class="flecha"><span>&#10094;</span></p>
+        <img src="Galeria_01/01.jpg" class="foto" id="foto_galeria">
+        <p id="forward" class="flecha"><span>&#10095;</span></p>
+      </div>
+
+  </div>
+
+  <div class="item footer"></div>
+
+<script>
+
+$(document).ready( function() {
+
+  document.getElementById("backward").style.visibility = "hidden";
+
+  // De forma inicial se carga la 1era galería
+  arrayImagenes = arrayImagenes1;
+
+  // Escoger galería cuando el evento onclick se dispare
+  // $("#galeria1").click(function(){ setImgGalleryArray(this.id); });
+  // $("#galeria2").click(function(){ setImgGalleryArray(this.id); });
+  // $("#galeria3").click(function(){ setImgGalleryArray(this.id); });
+
+  $('#galery1').on('click', function () {
+      setImgGalleryArray(this.id);
+  });
+  $('#galery2').on('click', function () {
+      setImgGalleryArray(this.id);
+  });
+  $('#galery3').on('click', function () {
+      setImgGalleryArray(this.id);
+  });
+
+  // Imagen siguiente o anterior
+  $("#backward").click(function(){ cambiarImagen(this.id); });
+  $("#forward").click(function(){ cambiarImagen(this.id); });
+
+});
+
+</script>
+
+</body>
+</html> 

@@ -1,12 +1,29 @@
-function opcion(elemento) {
-    var opcion1 = document.getElementById('opcion1')
-    var opcion2 = document.getElementById('opcion2')
+var offset = [0,0]
+var divCajita = document.getElementById('cajita')
+var esPresionada = false
 
-    if (elemento == 1) {
-        opcion1.style.zIndex = 2
-        opcion2.style.zIndex = 1
-    } else if (elemento == 2) {
-        opcion1.style.zIndex = 1
-        opcion2.style.zIndex = 2
+divCajita.addEventListener('mousedown', function(e) {
+    esPresionada = true
+    console.log('[mousedown]')
+    console.log('offsetLeft: ' + divCajita.offsetLeft + ' - CoordX: ' + e.clientX)
+    console.log('offsetTop: ' + divCajita.offsetTop + ' - CoordY: ' + e.clientY)
+
+    offset = [
+        divCajita.offsetLeft - e.clientX,
+        divCajita.offsetTop - e.clientY
+    ]
+}, true)
+
+divCajita.addEventListener('mouseup', function() {
+    esPresionada = false
+}, true)
+
+divCajita.addEventListener('mousemove', function(e) {
+    console.log('[mousemove]')
+    
+    e.preventDefault()
+    if (esPresionada) {
+        divCajita.style.left = (e.clientX + offset[0]) + 'px'
+        divCajita.style.top = (e.clientY + offset[1]) + 'px'
     }
-}
+}, true)
